@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "movilidad-analitica-co2": {
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        ".agents/mcp_server.py"
+      ],
+      "env": {
+        "INSTRUCCIONES_AGENTE": "Eres un equipo experto: Ingeniero de Datos, Analista Cuantitativo y Científico Ambiental. Utiliza las herramientas MCP disponibles para el proyecto de Movilidad Intermunicipal."
+      }
+    }
+  }
+}
