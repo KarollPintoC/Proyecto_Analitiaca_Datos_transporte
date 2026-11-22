@@ -1,0 +1,5 @@
+control,dataset_limpio,postgresql,parquet,diferencia_bd,diferencia_parquet
+Número de registros,5421603.0,5421603.0,5421603.0,0.0,0.0
+Suma de pasajeros,66505994.0,66505994.0,66505994.0,0.0,0.0
+Suma de despachos,5589136.0,5589136.0,5589136.0,0.0,0.0
+Suma de pasajeros-km,23010895352.3752,23010895352.35167,23010895352.3752,0.02,0.0

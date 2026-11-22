@@ -1,0 +1,9 @@
+paso,registros_antes,registros_eliminados,registros_despues,decision
+0. Registros tras cruces geográficos,5530364,0,5530364,Control de integridad: deben coincidir con lo descargado
+1. Vehículos de alta capacidad (30-40 puestos),5530364,0,5530364,"Alcance del estudio: solo BUS, homologado a diésel"
+2. Pasajeros nulos o negativos,5530364,0,5530364,Se excluyen: imputar 0 inflaría artificialmente los viajes vacíos
+3. Despachos nulos o menores que 1,5530364,0,5530364,Se excluyen: sin número de buses no se puede calcular capacidad ni emisiones
+4. Origen o destino sin coordenadas,5530364,6123,5524241,Se excluyen: la distancia no es calculable; imputar el promedio sesgaría las emisiones
+5. Pasajeros mayores que la capacidad,5524241,102638,5421603,Se excluyen registros con ocupación > 100 %: se consideran errores de registro (verificar normativa sobre pasajeros de pie)
+6. Duplicados exactos (se conservan),5421603,0,5421603,"717,794 registros idénticos; se conservan porque la fuente no tiene un identificador único y pueden ser despachos distintos"
+7. Viajes con 0 pasajeros (se conservan),5421603,0,5421603,"475,413 registros (8.8 %): se conservan porque emiten CO2e sin transportar pasajeros, que es el fenómeno estudiado"
