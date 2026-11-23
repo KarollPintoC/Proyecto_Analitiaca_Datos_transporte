@@ -80,7 +80,11 @@ print("Notebook actualizado con el deep-dive y la nota metodológica.")
 
 
 # --- 2. CÁLCULOS FASE 3: MODELADO AMBIENTAL ---
-db_url = 'postgresql://postgres:postgres@localhost:5433/movilidad'
+import os
+from dotenv import load_dotenv
+load_dotenv()
+db_url = (f"postgresql://{os.getenv('POSTGRES_USER', 'postgres')}:{os.environ['POSTGRES_PASSWORD']}"
+          f"@{os.getenv('POSTGRES_HOST', 'localhost')}:{os.getenv('POSTGRES_PORT', '5433')}/{os.getenv('POSTGRES_DB', 'movilidad')}")
 engine = create_engine(db_url)
 df = pl.read_database(query="SELECT * FROM despachos_enriquecidos;", connection=engine)
 

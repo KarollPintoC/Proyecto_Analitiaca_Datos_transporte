@@ -2,6 +2,9 @@
 
 .PHONY: help up down logs restart clean psql jupyter
 
+# Credenciales locales (ver .env.example)
+-include .env
+
 # Comando por defecto
 help:
 	@echo "Comandos disponibles:"
@@ -36,9 +39,9 @@ clean:
 
 # Consola PostgreSQL
 psql:
-	docker exec -it db_movilidad psql -U postgres -d movilidad
+	docker exec -it db_movilidad psql -U $(POSTGRES_USER) -d $(POSTGRES_DB)
 
 # Info JupyterLab
 jupyter:
 	@echo "Accede a JupyterLab en tu navegador: http://localhost:8888"
-	@echo "El token de acceso es: analitica2026"
+	@echo "El token de acceso está en .env (JUPYTER_TOKEN): $(JUPYTER_TOKEN)"

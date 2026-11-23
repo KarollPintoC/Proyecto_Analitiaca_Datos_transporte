@@ -12,3 +12,12 @@ wheels/
 
 datos/raw/
 .DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+**/.DS_Store
+
+# Variables de entorno (credenciales locales)
+.env
