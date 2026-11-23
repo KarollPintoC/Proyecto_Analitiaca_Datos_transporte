@@ -53,7 +53,7 @@ Fuente: `results/tables/fase3_01_kpi_linea_base.csv` y `fase3_04_sensibilidad_ca
 
 Si se asume un bus de 45 puestos, la ocupación baja a 27.9 % y el exceso sube a +141 %. La conclusión se mantiene con cualquiera de las dos capacidades.
 
-> `reporte_fase3_conclusiones.md` y su PDF se escribieron con una versión anterior de la limpieza (por ejemplo, el +246 %) y no coinciden con estas cifras.
+El reporte técnico completo está en `reporte_fase3_conclusiones.md` (y en PDF).
 
 ## Estructura
 
