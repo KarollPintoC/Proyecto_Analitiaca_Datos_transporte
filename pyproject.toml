@@ -25,4 +25,8 @@ dependencies = [
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.52",
     "unidecode>=1.4.0",
+    "scikit-learn>=1.7.2",
+    "optuna>=5.1.0",
+    "lightgbm>=4.7.0",
+    "tensorflow>=2.21.0",
 ]
