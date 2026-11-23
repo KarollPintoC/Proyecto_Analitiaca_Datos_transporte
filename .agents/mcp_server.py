@@ -24,7 +24,7 @@ async def list_tools() -> list[Tool]:
                 "properties": {
                     "db_url": {
                         "type": "string", 
-                        "default": "postgresql://postgres:postgres@localhost:5432/movilidad"
+                        "default": "postgresql://postgres:postgres@localhost:5433/movilidad"
                     }
                 }
             }
@@ -37,7 +37,7 @@ async def list_tools() -> list[Tool]:
                 "properties": {
                     "db_url": {
                         "type": "string",
-                        "default": "postgresql://postgres:postgres@localhost:5432/movilidad"
+                        "default": "postgresql://postgres:postgres@localhost:5433/movilidad"
                     },
                     "output_path": {
                         "type": "string",
@@ -54,7 +54,7 @@ async def list_tools() -> list[Tool]:
                 "properties": {
                     "db_url": {
                         "type": "string",
-                        "default": "postgresql://postgres:postgres@localhost:5432/movilidad"
+                        "default": "postgresql://postgres:postgres@localhost:5433/movilidad"
                     }
                 }
             }
@@ -78,7 +78,7 @@ async def list_tools() -> list[Tool]:
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     try:
         if name == "skill_etl_datos_abiertos":
-            db_url = arguments.get("db_url", "postgresql://postgres:postgres@localhost:5432/movilidad")
+            db_url = arguments.get("db_url", "postgresql://postgres:postgres@localhost:5433/movilidad")
             
             # 1. Extracción: Obtenemos una muestra representativa
             url = "https://www.datos.gov.co/resource/eh75-8ah6.json?$limit=15000"
@@ -144,7 +144,7 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
                             "POSTGRES_PASSWORD": "postgres",
                             "POSTGRES_DB": "movilidad"
                         },
-                        "ports": ["5432:5432"],
+                        "ports": ["5433:5432"],
                         "volumes": ["pgdata:/var/lib/postgresql/data"]
                     },
                     "jupyter": {

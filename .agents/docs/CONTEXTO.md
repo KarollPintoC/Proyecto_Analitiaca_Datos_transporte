@@ -15,7 +15,7 @@ El proyecto está construido bajo una filosofía modular e infraestructura conte
 
 - **Gestor de Paquetes Python:** Se utiliza `uv` para gestionar el entorno virtual (`.venv`) en Python 3.10.9 y las dependencias (registradas en `pyproject.toml`).
 - **Docker & Docker Compose:** Todo el despliegue analítico y de base de datos corre sobre Docker (orquestado vía `docker-compose.yml` y comandos centralizados en un `Makefile`).
-  - **Servicio PostgreSQL:** Motor relacional (v15) para almacenar los datos limpios. (Puerto `5432`, DB: `movilidad`).
+  - **Servicio PostgreSQL:** Motor relacional (v15) para almacenar los datos limpios. (Puerto `5433` en Windows → `5432` en el contenedor, DB: `movilidad`).
   - **Servicio JupyterLab:** Entorno interactivo de Data Science Notebook (con soporte de Python y R) para exploración. (Puerto `8888`, Token: `analitica2026`).
 
 ## 3. Arquitectura MCP (Model Context Protocol)

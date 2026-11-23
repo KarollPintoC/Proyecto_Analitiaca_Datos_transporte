@@ -1,0 +1,11 @@
+kpi,valor
+registros,5421603.0
+buses_despachados,5589136.0
+pasajeros,66505994.0
+ocupacion_pct,29.7479
+registros_vacios_pct,8.7689
+ocupacion_critica_pct,63.5322
+emisiones_t_co2e,1730054.5437
+intensidad_real_kg_pkm,0.0752
+intensidad_ideal_kg_pkm,0.0317
+emisiones_evitables_t_co2e,1000177.7068

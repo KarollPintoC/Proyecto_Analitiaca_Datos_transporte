@@ -1,0 +1,12 @@
+kpi,40 puestos,45 puestos
+registros,5421603.0,5421603.0
+buses_despachados,5589136.0,5589136.0
+pasajeros,66505994.0,66505994.0
+ocupacion_pct,29.7479,26.4426
+registros_vacios_pct,8.7689,8.7689
+ocupacion_critica_pct,63.5322,70.8471
+emisiones_t_co2e,1730054.5437,1730054.5437
+intensidad_real_kg_pkm,0.0752,0.0752
+intensidad_ideal_kg_pkm,0.0317,0.0282
+emisiones_evitables_t_co2e,1000177.7068,1081275.1331
+exceso_sobre_ideal_pct,137.0338,166.663

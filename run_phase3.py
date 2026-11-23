@@ -80,7 +80,7 @@ print("Notebook actualizado con el deep-dive y la nota metodológica.")
 
 
 # --- 2. CÁLCULOS FASE 3: MODELADO AMBIENTAL ---
-db_url = 'postgresql://postgres:postgres@localhost:5432/movilidad'
+db_url = 'postgresql://postgres:postgres@localhost:5433/movilidad'
 engine = create_engine(db_url)
 df = pl.read_database(query="SELECT * FROM despachos_enriquecidos;", connection=engine)
 
