@@ -1,0 +1,12 @@
+kpi,todos los despachos,solo despachos de origen
+registros,5333855.0,3437750.0
+buses_despachados,5497543.0,3562868.0
+pasajeros,68978580.0,43543921.0
+ocupacion_pct,31.3679,30.554
+registros_vacios_pct,8.8551,7.3848
+ocupacion_critica_pct,61.6873,62.5889
+emisiones_t_co2e,1580459.1365,778727.9515
+intensidad_real_kg_pkm,0.0679,0.0649
+intensidad_ideal_kg_pkm,0.0317,0.0317
+emisiones_evitables_t_co2e,841985.9017,398290.2058
+exceso_sobre_ideal_pct,114.0171,104.6926

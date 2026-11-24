@@ -1,3 +1,5 @@
+> **Documento histórico.** Describe la versión anterior del proyecto (2 días de datos, Antigravity IDE). Las cifras, fórmulas y reglas de limpieza vigentes están en los cuadernos de `notebooks/`, en `results/tables/` y en `docs/bitacora.md`.
+
 # Contexto del Proyecto: Analítica de Movilidad y Emisiones de CO2
 
 Este archivo sirve como memoria y guía de contexto para el usuario y cualquier agente de Inteligencia Artificial que se integre al proyecto en iteraciones futuras. Contiene la arquitectura, objetivos y configuración actual del repositorio.

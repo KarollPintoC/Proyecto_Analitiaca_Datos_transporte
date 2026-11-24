@@ -59,18 +59,18 @@ El reporte técnico completo está en `reporte_fase3_conclusiones.md` (y en PDF)
 
 ```
 ├── base/                 PDF fuente de municipios y departamentos, notebook original
-├── datos/
-│   ├── raw/              Descargas mensuales de la API (no se sube a git)
+├── docs/
+│   └── bitacora.md       Bitácora de decisiones metodológicas
+├── datos/│   ├── raw/              Descargas mensuales de la API (no se sube a git)
 │   ├── *_extraidos.csv   Catálogos de municipios y departamentos
 │   ├── distancias_rutas.csv          Caché de distancias OSRM por ruta
 │   ├── despachos_enriquecidos.parquet   Salida de Fase 1
 │   └── fase3_dataset_emisiones.parquet  Salida de Fase 3
-├── notebooks/            Fase 1, 2 y 3
+├── notebooks/            Fases 1 a 5
 ├── results/
 │   ├── figures/          Gráficas de Fase 2 y 3
 │   └── tables/           Tablas de validación, limpieza, EDA y KPI
 ├── scripts/              Extracción de los catálogos desde los PDF (pdfplumber)
-├── run_phase3.py         Script de apoyo de la versión anterior de Fase 3
 ├── docker-compose.yml    PostgreSQL 15 y JupyterLab
 ├── Makefile              Comandos de Docker
 └── .env.example          Plantilla de credenciales locales
