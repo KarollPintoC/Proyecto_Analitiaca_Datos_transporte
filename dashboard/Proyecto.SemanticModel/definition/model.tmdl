@@ -11,7 +11,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_QueryOrder = ["public fact_despachos","public dim_calendario","public dim_origen","public dim_destino","public dim_flota"]
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
 ref table 'public fact_despachos'
 ref table 'public dim_calendario'

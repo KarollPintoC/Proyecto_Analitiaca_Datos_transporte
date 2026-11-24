@@ -1,0 +1,12 @@
+// Consulta de validación de totales del tablero (Vista de consultas DAX de Power BI Desktop).
+// Su resultado se guarda en results/tables/fase4_valores_power_bi.csv y lo usa Fase4_Modelo_Dimensional.ipynb.
+EVALUATE
+ROW(
+    "Registros", [Registros],
+    "Pasajeros", [Total pasajeros],
+    "Buses", [Buses despachados],
+    "Pasajeros-km", [Pasajeros-km],
+    "Ocupacion", [Ocupación %],
+    "Emisiones t", [Emisiones t],
+    "Intensidad", [Intensidad real]
+)
