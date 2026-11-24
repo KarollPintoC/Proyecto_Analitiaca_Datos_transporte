@@ -71,7 +71,7 @@ El reporte técnico completo está en `reporte_fase3_conclusiones.md` (y en PDF)
 │   ├── distancias_rutas.csv          Caché de distancias OSRM por ruta
 │   ├── despachos_enriquecidos.parquet   Salida de Fase 1
 │   └── fase3_dataset_emisiones.parquet  Salida de Fase 3
-├── notebooks/            Fases 1 a 5
+├── notebooks/            Fases 1 a 5 y cuaderno de Colab
 ├── results/
 │   ├── figures/          Gráficas de Fase 2 y 3
 │   └── tables/           Tablas de validación, limpieza, EDA y KPI
@@ -99,13 +99,23 @@ Requisitos: [uv](https://github.com/astral-sh/uv) y [Docker Desktop](https://www
    ```bash
    make up
    ```
-4. Ejecuta los notebooks en orden: Fase 1, Fase 2 y Fase 3. Desde la terminal:
+4. Ejecuta los notebooks en orden, de la Fase 1 a la Fase 5. Desde la terminal:
    ```bash
    cd notebooks
    uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Fase1_ETL.ipynb
    uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Fase2_EDA.ipynb
    uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Fase3_Modelado_Ambiental.ipynb
+   uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Fase4_Modelo_Dimensional.ipynb
+   uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Fase5_Modelado_Predictivo.ipynb
    ```
+   La Fase 5 tarda de 1 a 2 horas con `MODO_RAPIDO = False`, que es la corrida válida.
+5. Abre `dashboard/Proyecto.pbip` con Power BI Desktop y pulsa **Actualizar** (requiere PostgreSQL arriba).
+
+### Ejecución en Google Colab
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KarollPintoC/Proyecto_Analitiaca_Datos_transporte/blob/main/notebooks/Colab_Reproduccion.ipynb)
+
+`notebooks/Colab_Reproduccion.ipynb` clona el repositorio, ejecuta las Fases 2, 3 y (opcionalmente) 5 sobre el parquet versionado, sin Docker, y compara las tablas regeneradas con las del repositorio. Las Fases 1 y 4 requieren PostgreSQL y no se ejecutan en Colab.
 
 Otros comandos: `make psql` abre una consola de PostgreSQL, `make jupyter` muestra el enlace y el token, y `make clean` borra los contenedores y la base de datos.
 
