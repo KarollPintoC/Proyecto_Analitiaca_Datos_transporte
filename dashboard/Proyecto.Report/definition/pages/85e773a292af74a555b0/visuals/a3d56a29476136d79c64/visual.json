@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a3d56a29476136d79c64",
+  "position": {
+    "x": 766,
+    "y": 130,
+    "z": 10000,
+    "height": 96,
+    "width": 242,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "% Vacíos"
+                }
+              },
+              "queryRef": "public fact_despachos.% Vacíos",
+              "nativeQueryRef": "% Vacíos"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

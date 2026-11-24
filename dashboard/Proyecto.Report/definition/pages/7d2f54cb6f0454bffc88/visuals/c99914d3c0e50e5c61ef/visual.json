@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c99914d3c0e50e5c61ef",
+  "position": {
+    "x": 644,
+    "y": 68,
+    "z": 7000,
+    "height": 90,
+    "width": 306,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Galones evitables"
+                }
+              },
+              "queryRef": "public fact_despachos.Galones evitables",
+              "nativeQueryRef": "Galones evitables"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

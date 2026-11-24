@@ -1,0 +1,25 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CO
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public fact_despachos","public dim_calendario","public dim_origen","public dim_destino","public dim_flota"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public fact_despachos'
+ref table 'public dim_calendario'
+ref table DateTableTemplate_77d71d3c-8eae-429e-bcef-8a8fbd2c02a2
+ref table LocalDateTable_5e2f6f0e-a12d-42dd-a6ab-8c9a2e410401
+ref table 'public dim_origen'
+ref table 'public dim_destino'
+ref table 'public dim_flota'
+
+ref cultureInfo es-ES
+

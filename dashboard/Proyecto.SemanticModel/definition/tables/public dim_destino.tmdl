@@ -1,0 +1,46 @@
+table 'public dim_destino'
+	lineageTag: 37cc7678-36e0-4e44-9daa-a9fa1eb0e25c
+
+	column geo_key
+		dataType: string
+		lineageTag: 47ba268d-ee87-49ec-b70a-630e70f10c5b
+		summarizeBy: none
+		sourceColumn: geo_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column municipio_destino
+		dataType: string
+		lineageTag: 91967f57-b6ea-4ecb-a8ff-331e3799e345
+		summarizeBy: none
+		sourceColumn: municipio_destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_dept_destino
+		dataType: string
+		lineageTag: 15d7bc49-5198-428d-984f-e173f45508de
+		summarizeBy: none
+		sourceColumn: codigo_dept_destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column departamento_destino
+		dataType: string
+		lineageTag: 76dee932-bf8d-4dd2-a750-608326ed1b07
+		summarizeBy: none
+		sourceColumn: departamento_destino
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public dim_destino' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("localhost:5433", "movilidad"),
+				    public_dim_destino = Origen{[Schema="public",Item="dim_destino"]}[Data]
+				in
+				    public_dim_destino
+
+	annotation PBI_ResultType = Table
+

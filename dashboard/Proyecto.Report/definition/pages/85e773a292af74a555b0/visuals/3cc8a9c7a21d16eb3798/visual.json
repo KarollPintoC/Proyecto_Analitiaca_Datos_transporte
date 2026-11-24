@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "3cc8a9c7a21d16eb3798",
+  "position": {
+    "x": 16,
+    "y": 38,
+    "z": 2000,
+    "height": 22,
+    "width": 760,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicadores globales calculados como total sobre total (objetivos 1 y 2)",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#5F6B7A"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

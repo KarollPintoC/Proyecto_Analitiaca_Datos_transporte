@@ -1,0 +1,147 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "7a4155209546180ee28f",
+  "position": {
+    "x": 16,
+    "y": 166,
+    "z": 9000,
+    "height": 520,
+    "width": 620,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public dim_origen"
+                    }
+                  },
+                  "Property": "municipio_origen"
+                }
+              },
+              "queryRef": "public dim_origen.municipio_origen",
+              "nativeQueryRef": "municipio_origen"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public dim_destino"
+                    }
+                  },
+                  "Property": "municipio_destino"
+                }
+              },
+              "queryRef": "public dim_destino.municipio_destino",
+              "nativeQueryRef": "municipio_destino"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Ocupación %"
+                }
+              },
+              "queryRef": "public fact_despachos.Ocupación %",
+              "nativeQueryRef": "Ocupación %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Evitables t"
+                }
+              },
+              "queryRef": "public fact_despachos.Evitables t",
+              "nativeQueryRef": "Evitables t"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Participación evitables %"
+                }
+              },
+              "queryRef": "public fact_despachos.Participación evitables %",
+              "nativeQueryRef": "Participación evitables %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "public fact_despachos"
+                  }
+                },
+                "Property": "Evitables t"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rutas que más aportan a las emisiones evitables'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

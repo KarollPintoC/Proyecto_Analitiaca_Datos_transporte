@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "4b6f6500c3f5a5a9a034",
+  "position": {
+    "x": 16,
+    "y": 692,
+    "z": 12000,
+    "height": 24,
+    "width": 1248,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Fuente: Superintendencia de Transporte, datos.gov.co (eh75-8ah6), buses de 30 a 40 puestos, enero de 2025 a marzo de 2026. Las series mensuales excluyen diciembre de 2025 (datos incompletos en la fuente).",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#5F6B7A"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

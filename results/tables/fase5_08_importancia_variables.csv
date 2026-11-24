@@ -1,0 +1,12 @@
+variable,aumento_rmse,desv
+lag_1,410.651,3.084
+media_7,122.091,1.929
+media_mismo_dia_3s,49.649,1.581
+lag_14,28.363,2.366
+lag_7,10.266,0.783
+media_28,9.578,1.071
+distancia_km,8.462,1.613
+dept_origen,2.312,0.115
+mes,0.112,0.039
+vacaciones,0.0,0.0
+std_7,-0.225,0.343

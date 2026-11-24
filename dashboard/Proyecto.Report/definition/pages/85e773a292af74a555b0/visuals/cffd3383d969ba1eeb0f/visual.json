@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "cffd3383d969ba1eeb0f",
+  "position": {
+    "x": 266,
+    "y": 234,
+    "z": 13000,
+    "height": 96,
+    "width": 242,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Intensidad real"
+                }
+              },
+              "queryRef": "public fact_despachos.Intensidad real",
+              "nativeQueryRef": "Intensidad real"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

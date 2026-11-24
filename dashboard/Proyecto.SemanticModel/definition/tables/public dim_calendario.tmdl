@@ -1,0 +1,145 @@
+table 'public dim_calendario'
+	lineageTag: 63879d41-d907-4b2c-9bee-26744b9e54f7
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 25e41ebf-6baa-4b3d-9aa6-03b305c365d0
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 124c0d38-a127-4d0e-ad9a-066424e14ebd
+		summarizeBy: none
+		sourceColumn: fecha
+
+		variation Variation
+			isDefault
+			relationship: 3d20e669-90e2-4fba-a744-1606a7001a75
+			defaultHierarchy: LocalDateTable_5e2f6f0e-a12d-42dd-a6ab-8c9a2e410401.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: 09c6f044-006b-4a0f-9fab-d6a7e8437d70
+		summarizeBy: sum
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: d2d131e1-2d7e-4a88-89ba-708e3929a176
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 9569b329-34cc-4945-a698-486b9cc445d1
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_mes
+		sortByColumn: mes
+		dataType: string
+		lineageTag: a7c9ce8b-0ec8-43f9-968b-b09aacc07ee5
+		summarizeBy: none
+		sourceColumn: nombre_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio_mes
+		dataType: string
+		lineageTag: 6c2e9ca1-0619-4c49-a5f6-4eec762cd837
+		summarizeBy: none
+		sourceColumn: anio_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia
+		dataType: int64
+		formatString: 0
+		lineageTag: f5717436-456e-44d5-b5fb-c31f018d6e88
+		summarizeBy: sum
+		sourceColumn: dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana_num
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f8f7e70-bbe0-4b22-a308-c0b17daced3b
+		summarizeBy: sum
+		sourceColumn: dia_semana_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		sortByColumn: dia_semana_num
+		dataType: string
+		lineageTag: 1476f599-b8e9-41b5-a75d-c98979539f5e
+		summarizeBy: none
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_fin_semana
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8a8a74cd-20c8-4a30-9da8-87335e19f32c
+		summarizeBy: none
+		sourceColumn: es_fin_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_festivo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 92566cd3-4ee7-476a-bd12-6a678197e264
+		summarizeBy: none
+		sourceColumn: es_festivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_festivo
+		dataType: string
+		lineageTag: 3ef55bd2-468d-4a92-b598-dceb510fce56
+		summarizeBy: none
+		sourceColumn: nombre_festivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_incompleto
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9d7963ee-ef37-4bf8-8ec4-3f5fbe27c98d
+		summarizeBy: none
+		sourceColumn: mes_incompleto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public dim_calendario' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("localhost:5433", "movilidad"),
+				    public_dim_calendario = Origen{[Schema="public",Item="dim_calendario"]}[Data]
+				in
+				    public_dim_calendario
+
+	annotation PBI_ResultType = Table
+

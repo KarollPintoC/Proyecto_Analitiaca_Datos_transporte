@@ -1,0 +1,24 @@
+relationship 3d20e669-90e2-4fba-a744-1606a7001a75
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public dim_calendario'.fecha
+	toColumn: LocalDateTable_5e2f6f0e-a12d-42dd-a6ab-8c9a2e410401.Date
+
+relationship 1e0edc52-bb22-4d8e-961e-55fcf3306429
+	fromColumn: 'public fact_despachos'.fecha_key
+	toColumn: 'public dim_calendario'.fecha_key
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2247a3ea-e622-4b5f-820f-2a84b22a40b5
+	fromColumn: 'public fact_despachos'.flota_key
+	toColumn: 'public dim_flota'.flota_key
+
+	annotation PBI_IsFromSource = FS
+
+relationship b3cd9e10-55d4-41ee-8c3a-e4d75b98d8c8
+	fromColumn: 'public fact_despachos'.origen_key
+	toColumn: 'public dim_origen'.geo_key
+
+relationship 5ccf8f86-ec98-4e92-9a05-5c48604a6810
+	fromColumn: 'public fact_despachos'.destino_key
+	toColumn: 'public dim_destino'.geo_key

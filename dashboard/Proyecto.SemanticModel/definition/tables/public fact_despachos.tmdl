@@ -1,0 +1,264 @@
+table 'public fact_despachos'
+	lineageTag: 60c40a2c-e76d-47ea-8227-20e7c4203f4f
+
+	measure 'Registros' = COUNTROWS('public fact_despachos')
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Total pasajeros' = SUM('public fact_despachos'[pasajeros])
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Buses despachados' = SUM('public fact_despachos'[despachos])
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Pasajeros-km' = SUM('public fact_despachos'[pax_km])
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Ocupación %' = DIVIDE(SUM('public fact_despachos'[pasajeros]), SUM('public fact_despachos'[capacidad_total])) * 100
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure 'Meta ocupación %' = 80
+		formatString: 0
+		displayFolder: KPI
+
+	measure 'Máximo ocupación %' = 100
+		formatString: 0
+		displayFolder: KPI
+
+	measure 'Brecha ocupación pp' = [Meta ocupación %] - [Ocupación %]
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure 'Pasajeros por bus' = DIVIDE([Total pasajeros], [Buses despachados])
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure '% Vacíos' = DIVIDE(CALCULATE(COUNTROWS('public fact_despachos'), 'public fact_despachos'[viaje_vacio] = TRUE()), COUNTROWS('public fact_despachos')) * 100
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure '% Crítica' = DIVIDE(CALCULATE(COUNTROWS('public fact_despachos'), 'public fact_despachos'[factor_ocupacion_pct] < 35), COUNTROWS('public fact_despachos')) * 100
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure 'Emisiones t' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), 1000)
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Intensidad real' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), SUM('public fact_despachos'[pax_km]))
+		formatString: 0.0000
+		displayFolder: KPI
+
+	measure 'Intensidad ideal' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), SUM('public fact_despachos'[pax_km_ideal]))
+		formatString: 0.0000
+		displayFolder: KPI
+
+	measure 'Exceso %' = DIVIDE([Intensidad real] - [Intensidad ideal], [Intensidad ideal]) * 100
+		formatString: 0.0
+		displayFolder: KPI
+
+	measure 'Evitables t' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]) - SUM('public fact_despachos'[pax_km]) * [Intensidad ideal], 1000)
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Galones evitables' = [Evitables t] * 1000 / 10.15
+		formatString: #,0
+		displayFolder: KPI
+
+	measure 'Participación evitables %' = DIVIDE([Evitables t], CALCULATE([Evitables t], ALL('public dim_origen'), ALL('public dim_destino'))) * 100
+		formatString: 0.00
+		displayFolder: KPI
+
+	column despacho_id
+		isHidden
+		dataType: int64
+		formatString: 0
+		lineageTag: 38788d91-6a26-4e17-bdac-0a1038a17d26
+		summarizeBy: sum
+		sourceColumn: despacho_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_key
+		isHidden
+		dataType: int64
+		formatString: 0
+		lineageTag: 068f6806-94db-4595-8105-b1c8f20af07d
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column hora_despacho
+		dataType: int64
+		formatString: 0
+		lineageTag: b7a896d3-8273-4fb1-b5da-ee85af927d0b
+		summarizeBy: sum
+		sourceColumn: hora_despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column origen_key
+		isHidden
+		dataType: string
+		lineageTag: cbaadc3c-f080-4d61-af43-2b3e63643c1a
+		summarizeBy: none
+		sourceColumn: origen_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column destino_key
+		isHidden
+		dataType: string
+		lineageTag: 61aa0308-da0b-463f-8397-221b7bc071be
+		summarizeBy: none
+		sourceColumn: destino_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column flota_key
+		isHidden
+		dataType: int64
+		formatString: 0
+		lineageTag: f9e3a273-f799-4bc2-8c83-7f8c76205bde
+		summarizeBy: none
+		sourceColumn: flota_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column terminal
+		dataType: string
+		lineageTag: df48f73d-f034-4376-8676-cece9d7e90cf
+		summarizeBy: none
+		sourceColumn: terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_despacho
+		dataType: string
+		lineageTag: 00481c66-748e-49af-9a08-963606eb4944
+		summarizeBy: none
+		sourceColumn: tipo_despacho
+
+		annotation SummarizationSetBy = Automatic
+
+	column despachos
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ac50cbb-f1b1-4da5-906f-d58bc888596b
+		summarizeBy: sum
+		sourceColumn: despachos
+
+		annotation SummarizationSetBy = Automatic
+
+	column pasajeros
+		dataType: int64
+		formatString: 0
+		lineageTag: 49da481a-0da2-4a75-bd53-d7ffd757dd97
+		summarizeBy: sum
+		sourceColumn: pasajeros
+
+		annotation SummarizationSetBy = Automatic
+
+	column capacidad_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 57a4af18-0221-4a29-8793-6580e8f8d393
+		summarizeBy: sum
+		sourceColumn: capacidad_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column distancia_km
+		dataType: double
+		lineageTag: 4eeee9ae-a2be-4447-b227-3f8e7ac8b1bb
+		summarizeBy: sum
+		sourceColumn: distancia_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pax_km
+		dataType: double
+		lineageTag: 12ee9c44-b752-4401-89ea-092ddc2de372
+		summarizeBy: sum
+		sourceColumn: pax_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column consumo_galones
+		dataType: double
+		lineageTag: 1a56d5d2-d445-4013-bd1c-60d34416e68d
+		summarizeBy: sum
+		sourceColumn: consumo_galones
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column emisiones_kg_co2e
+		dataType: double
+		lineageTag: a711d497-1026-4ab8-b978-3f341c67a6e1
+		summarizeBy: sum
+		sourceColumn: emisiones_kg_co2e
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pax_km_ideal
+		dataType: double
+		lineageTag: 51d55b35-5b79-4bd2-b9be-2b91ec25d528
+		summarizeBy: sum
+		sourceColumn: pax_km_ideal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column factor_ocupacion_pct
+		dataType: double
+		lineageTag: 893e5394-34d7-42f4-a771-a2c0781e82e8
+		summarizeBy: sum
+		sourceColumn: factor_ocupacion_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column viaje_vacio
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e826984c-1a71-4a98-97f3-473aa5906c55
+		summarizeBy: none
+		sourceColumn: viaje_vacio
+
+		annotation SummarizationSetBy = Automatic
+
+	column sobrecupo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 472fedce-ffda-43ac-a682-2407471d432b
+		summarizeBy: none
+		sourceColumn: sobrecupo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public fact_despachos' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("localhost:5433", "movilidad"),
+				    public_fact_despachos = Origen{[Schema="public",Item="fact_despachos"]}[Data]
+				in
+				    public_fact_despachos
+
+	annotation PBI_ResultType = Table
+

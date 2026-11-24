@@ -1,0 +1,19 @@
+variable,formula,tipo,conjunto,justificacion
+dia_semana,Día de la semana (0 = lunes),Calendario,Base,Patrón semanal de la demanda
+mes,Mes del año (1-12),Calendario,Base,Estacionalidad anual
+dia_mes,Día del mes (1-31),Calendario,Base,Efectos de inicio y fin de mes
+distancia_km,Distancia por carretera de la ruta (OSRM),Dominio,Base,Rutas largas y cortas tienen demandas distintas
+dept_origen,Departamento de origen (one-hot),Dominio,Base,Diferencias regionales
+es_fin_semana,1 si es sábado o domingo,Calendario,Ingeniería,Viajes de descanso
+es_festivo,1 si es festivo en Colombia (librería holidays),Calendario,Ingeniería,Puentes festivos
+vispera_festivo,1 si el día siguiente es festivo,Calendario,Ingeniería,Salidas antes del puente
+post_festivo,1 si el día anterior fue festivo,Calendario,Ingeniería,Regresos después del puente
+dia_pago,"1 si el día del mes es 1, 2, 15, 16, 30 o 31",Dominio,Ingeniería,Quincenas: mayor capacidad de gasto
+vacaciones,"1 entre 15-jun y 15-jul, y entre 15-dic y 15-ene",Dominio,Ingeniería,Temporada alta escolar
+lag_1,Pasajeros de la ruta el día anterior,Rezago,Ingeniería,Inercia de corto plazo
+lag_7,Pasajeros de la ruta hace 7 días,Rezago,Ingeniería,Mismo día de la semana anterior
+lag_14,Pasajeros de la ruta hace 14 días,Rezago,Ingeniería,Patrón semanal más estable
+media_7,Media de los 7 días anteriores,Ventana móvil,Ingeniería,Nivel reciente de la ruta
+media_28,Media de los 28 días anteriores,Ventana móvil,Ingeniería,Nivel mensual de la ruta
+std_7,Desviación estándar de los 7 días anteriores,Ventana móvil,Ingeniería,Volatilidad reciente
+media_mismo_dia_3s,"Media de lag_7, lag_14 y lag_21",Ventana móvil,Ingeniería,Nivel típico de ese día de la semana

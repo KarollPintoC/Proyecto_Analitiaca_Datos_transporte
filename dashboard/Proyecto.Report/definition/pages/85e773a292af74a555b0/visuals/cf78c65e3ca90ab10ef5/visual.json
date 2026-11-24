@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "cf78c65e3ca90ab10ef5",
+  "position": {
+    "x": 16,
+    "y": 130,
+    "z": 7000,
+    "height": 96,
+    "width": 242,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Total pasajeros"
+                }
+              },
+              "queryRef": "public fact_despachos.Total pasajeros",
+              "nativeQueryRef": "Total pasajeros"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

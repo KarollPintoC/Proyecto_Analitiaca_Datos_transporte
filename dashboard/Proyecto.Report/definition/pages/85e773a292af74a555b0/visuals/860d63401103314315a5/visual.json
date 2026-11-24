@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "860d63401103314315a5",
+  "position": {
+    "x": 1016,
+    "y": 234,
+    "z": 16000,
+    "height": 96,
+    "width": 242,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public fact_despachos"
+                    }
+                  },
+                  "Property": "Evitables t"
+                }
+              },
+              "queryRef": "public fact_despachos.Evitables t",
+              "nativeQueryRef": "Evitables t"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -61,7 +61,12 @@ El reporte técnico completo está en `reporte_fase3_conclusiones.md` (y en PDF)
 ├── base/                 PDF fuente de municipios y departamentos, notebook original
 ├── docs/
 │   └── bitacora.md       Bitácora de decisiones metodológicas
-├── datos/│   ├── raw/              Descargas mensuales de la API (no se sube a git)
+├── dashboard/
+│   ├── Proyecto.pbip     Tablero de Power BI (abrir con Power BI Desktop y actualizar)
+│   ├── Proyecto.SemanticModel/   Modelo en estrella, relaciones y medidas DAX (TMDL)
+│   └── Proyecto.Report/          Páginas y visuales del tablero (PBIR)
+├── datos/
+│   ├── raw/              Descargas mensuales de la API (no se sube a git)
 │   ├── *_extraidos.csv   Catálogos de municipios y departamentos
 │   ├── distancias_rutas.csv          Caché de distancias OSRM por ruta
 │   ├── despachos_enriquecidos.parquet   Salida de Fase 1

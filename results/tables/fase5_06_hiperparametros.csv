@@ -1,0 +1,11 @@
+modelo,espacio_de_busqueda,mejores_valores
+Regresión lineal,Sin hiperparámetros,{}
+Ridge,"alpha: log [1e-3, 1e3]","{""alpha"": 879.4080529754356}"
+Lasso,"alpha: log [1e-4, 1]","{""alpha"": 0.26944991666882157}"
+KNN,"n_neighbors: [3, 50]; weights: uniform | distance","{""n_neighbors"": 32, ""weights"": ""distance""}"
+SVR,"C: log [0.1, 100]; epsilon: [0.01, 0.5]","{""C"": 0.22057320053419874, ""epsilon"": 0.04062806464753837}"
+Árbol de decisión,"max_depth: [3, 20]; min_samples_leaf: [1, 100]","{""max_depth"": 10, ""min_samples_leaf"": 30}"
+Random Forest,"n_estimators: [50, 300]; max_depth: [5, 25]; min_samples_leaf: [1, 50]; max_features: [0.3, 1.0]","{""n_estimators"": 139, ""max_depth"": 19, ""min_samples_leaf"": 17, ""max_features"": 0.907384162843224}"
+LightGBM,"n_estimators: [100, 800]; learning_rate: log [0.01, 0.2]; num_leaves: [15, 255]; min_child_samples: [5, 100]; subsample: [0.6, 1]; colsample_bytree: [0.6, 1]","{""n_estimators"": 683, ""learning_rate"": 0.018891200276189388, ""num_leaves"": 58, ""min_child_samples"": 22, ""subsample"": 0.7216968971838151, ""colsample_bytree"": 0.8099025726528951}"
+MLP,"capas: 64 | 128 | 64-32 | 128-64; alpha: log [1e-5, 1e-1]; learning_rate_init: log [1e-4, 1e-2]","{""capas"": ""64"", ""alpha"": 0.00020320453957116085, ""learning_rate_init"": 0.0018106139717754329}"
+GRU,"unidades: [16, 64]; dropout: [0, 0.3]; lr: log [1e-4, 1e-2]","{""unidades"": 35, ""dropout"": 0.2493431385525267, ""lr"": 0.0006437290330740571}"
