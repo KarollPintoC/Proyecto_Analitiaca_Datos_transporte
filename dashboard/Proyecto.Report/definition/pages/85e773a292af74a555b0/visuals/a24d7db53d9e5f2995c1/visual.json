@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "a24d7db53d9e5f2995c1",
   "position": {
     "x": 326,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public dim_origen.departamento_origen",
-              "nativeQueryRef": "departamento_origen"
+              "nativeQueryRef": "departamento_origen",
+              "active": true
             }
           ]
         }

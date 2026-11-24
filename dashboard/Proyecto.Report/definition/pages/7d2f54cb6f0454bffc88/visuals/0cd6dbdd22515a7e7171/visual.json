@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "0cd6dbdd22515a7e7171",
   "position": {
     "x": 792,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public dim_calendario.anio_mes",
-              "nativeQueryRef": "anio_mes"
+              "nativeQueryRef": "anio_mes",
+              "active": true
             }
           ]
         }

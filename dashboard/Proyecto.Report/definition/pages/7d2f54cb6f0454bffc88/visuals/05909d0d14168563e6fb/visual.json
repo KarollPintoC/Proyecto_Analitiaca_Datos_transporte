@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "05909d0d14168563e6fb",
   "position": {
     "x": 644,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public dim_calendario.anio_mes",
-              "nativeQueryRef": "anio_mes"
+              "nativeQueryRef": "anio_mes",
+              "active": true
             }
           ]
         },
@@ -79,8 +80,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

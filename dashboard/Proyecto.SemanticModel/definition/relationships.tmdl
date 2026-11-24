@@ -22,3 +22,4 @@ relationship b3cd9e10-55d4-41ee-8c3a-e4d75b98d8c8
 relationship 5ccf8f86-ec98-4e92-9a05-5c48604a6810
 	fromColumn: 'public fact_despachos'.destino_key
 	toColumn: 'public dim_destino'.geo_key
+

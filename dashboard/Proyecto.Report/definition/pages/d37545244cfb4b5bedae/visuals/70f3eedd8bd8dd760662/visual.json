@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "70f3eedd8bd8dd760662",
   "position": {
     "x": 16,
@@ -13,24 +13,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "public dim_calendario"
-                    }
-                  },
-                  "Property": "dia_semana"
-                }
-              },
-              "queryRef": "public dim_calendario.dia_semana",
-              "nativeQueryRef": "dia_semana"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -45,7 +27,27 @@
                 }
               },
               "queryRef": "public fact_despachos.hora_despacho",
-              "nativeQueryRef": "hora_despacho"
+              "nativeQueryRef": "hora_despacho",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public dim_calendario"
+                    }
+                  },
+                  "Property": "dia_semana"
+                }
+              },
+              "queryRef": "public dim_calendario.dia_semana",
+              "nativeQueryRef": "dia_semana",
+              "active": true
             }
           ]
         },

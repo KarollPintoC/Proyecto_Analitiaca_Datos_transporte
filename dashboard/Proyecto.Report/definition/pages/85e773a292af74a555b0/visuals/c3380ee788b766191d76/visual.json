@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "c3380ee788b766191d76",
   "position": {
     "x": 954,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public fact_despachos.tipo_despacho",
-              "nativeQueryRef": "tipo_despacho"
+              "nativeQueryRef": "tipo_despacho",
+              "active": true
             }
           ]
         }

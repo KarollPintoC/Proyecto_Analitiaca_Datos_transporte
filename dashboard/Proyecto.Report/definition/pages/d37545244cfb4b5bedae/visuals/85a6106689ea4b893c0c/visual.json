@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "85a6106689ea4b893c0c",
   "position": {
     "x": 784,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public fact_despachos.terminal",
-              "nativeQueryRef": "terminal"
+              "nativeQueryRef": "terminal",
+              "active": true
             }
           ]
         },
@@ -65,8 +66,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

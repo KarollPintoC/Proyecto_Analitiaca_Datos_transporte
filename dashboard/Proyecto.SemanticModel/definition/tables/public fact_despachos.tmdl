@@ -1,81 +1,99 @@
 table 'public fact_despachos'
 	lineageTag: 60c40a2c-e76d-47ea-8227-20e7c4203f4f
 
-	measure 'Registros' = COUNTROWS('public fact_despachos')
+	measure Registros = COUNTROWS('public fact_despachos')
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: df6f07d6-aa4c-4e21-b853-e6c3b8e06d58
 
 	measure 'Total pasajeros' = SUM('public fact_despachos'[pasajeros])
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 9acf94a1-d665-4d0b-8485-6d01f57c8005
 
 	measure 'Buses despachados' = SUM('public fact_despachos'[despachos])
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 2001c380-926f-444f-84a7-224580abd2b1
 
-	measure 'Pasajeros-km' = SUM('public fact_despachos'[pax_km])
+	measure Pasajeros-km = SUM('public fact_despachos'[pax_km])
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 2f6c3bc5-4410-4a5d-bef3-670962142cfe
 
 	measure 'Ocupación %' = DIVIDE(SUM('public fact_despachos'[pasajeros]), SUM('public fact_despachos'[capacidad_total])) * 100
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: 35b09122-43f6-4950-8211-f8d4148c66f9
 
 	measure 'Meta ocupación %' = 80
 		formatString: 0
 		displayFolder: KPI
+		lineageTag: 4d2fc988-238f-40a9-88b8-28326807cfb0
 
 	measure 'Máximo ocupación %' = 100
 		formatString: 0
 		displayFolder: KPI
+		lineageTag: 20c11e38-6097-4fe1-b3c2-4a50515599a6
 
 	measure 'Brecha ocupación pp' = [Meta ocupación %] - [Ocupación %]
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: beebc0aa-fb35-4c57-a217-3b702064787e
 
 	measure 'Pasajeros por bus' = DIVIDE([Total pasajeros], [Buses despachados])
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: 5a2fdf24-71b2-45ce-8c5d-1311982f9383
 
 	measure '% Vacíos' = DIVIDE(CALCULATE(COUNTROWS('public fact_despachos'), 'public fact_despachos'[viaje_vacio] = TRUE()), COUNTROWS('public fact_despachos')) * 100
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: 9cb1ced7-cb8c-4a48-892e-b448ae7cd461
 
 	measure '% Crítica' = DIVIDE(CALCULATE(COUNTROWS('public fact_despachos'), 'public fact_despachos'[factor_ocupacion_pct] < 35), COUNTROWS('public fact_despachos')) * 100
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: fe87eaef-8e73-4edd-a805-6922ba5e3c07
 
 	measure 'Emisiones t' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), 1000)
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 2fda0c6a-297e-4da6-90ce-39a046193844
 
 	measure 'Intensidad real' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), SUM('public fact_despachos'[pax_km]))
 		formatString: 0.0000
 		displayFolder: KPI
+		lineageTag: e658f163-4a40-41d4-a138-1d78f5b14ac8
 
 	measure 'Intensidad ideal' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]), SUM('public fact_despachos'[pax_km_ideal]))
 		formatString: 0.0000
 		displayFolder: KPI
+		lineageTag: d17773ee-d521-4e3f-9beb-890d1a773246
 
 	measure 'Exceso %' = DIVIDE([Intensidad real] - [Intensidad ideal], [Intensidad ideal]) * 100
 		formatString: 0.0
 		displayFolder: KPI
+		lineageTag: 7ff01bef-24eb-4440-a8e1-512cb50de599
 
 	measure 'Evitables t' = DIVIDE(SUM('public fact_despachos'[emisiones_kg_co2e]) - SUM('public fact_despachos'[pax_km]) * [Intensidad ideal], 1000)
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 0dc4f7e3-f993-4acf-be48-c763d277b14d
 
 	measure 'Galones evitables' = [Evitables t] * 1000 / 10.15
 		formatString: #,0
 		displayFolder: KPI
+		lineageTag: 701a1a81-d0d7-4fd0-926f-f678059c66fa
 
 	measure 'Participación evitables %' = DIVIDE([Evitables t], CALCULATE([Evitables t], ALL('public dim_origen'), ALL('public dim_destino'))) * 100
 		formatString: 0.00
 		displayFolder: KPI
+		lineageTag: 8daddc79-6ba4-4434-80a0-5445b0dc435d
 
 	column despacho_id
-		isHidden
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 38788d91-6a26-4e17-bdac-0a1038a17d26
 		summarizeBy: sum
@@ -84,8 +102,8 @@ table 'public fact_despachos'
 		annotation SummarizationSetBy = Automatic
 
 	column fecha_key
-		isHidden
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 068f6806-94db-4595-8105-b1c8f20af07d
 		summarizeBy: none
@@ -103,8 +121,8 @@ table 'public fact_despachos'
 		annotation SummarizationSetBy = Automatic
 
 	column origen_key
-		isHidden
 		dataType: string
+		isHidden
 		lineageTag: cbaadc3c-f080-4d61-af43-2b3e63643c1a
 		summarizeBy: none
 		sourceColumn: origen_key
@@ -112,8 +130,8 @@ table 'public fact_despachos'
 		annotation SummarizationSetBy = Automatic
 
 	column destino_key
-		isHidden
 		dataType: string
+		isHidden
 		lineageTag: 61aa0308-da0b-463f-8397-221b7bc071be
 		summarizeBy: none
 		sourceColumn: destino_key
@@ -121,8 +139,8 @@ table 'public fact_despachos'
 		annotation SummarizationSetBy = Automatic
 
 	column flota_key
-		isHidden
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: f9e3a273-f799-4bc2-8c83-7f8c76205bde
 		summarizeBy: none

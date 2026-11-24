@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "795b7cae5379d12a156a",
   "position": {
     "x": 636,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "public fact_despachos.terminal",
-              "nativeQueryRef": "terminal"
+              "nativeQueryRef": "terminal",
+              "active": true
             }
           ]
         }

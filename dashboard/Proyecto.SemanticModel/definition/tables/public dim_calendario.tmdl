@@ -54,11 +54,11 @@ table 'public dim_calendario'
 		annotation SummarizationSetBy = Automatic
 
 	column nombre_mes
-		sortByColumn: mes
 		dataType: string
 		lineageTag: a7c9ce8b-0ec8-43f9-968b-b09aacc07ee5
 		summarizeBy: none
 		sourceColumn: nombre_mes
+		sortByColumn: mes
 
 		annotation SummarizationSetBy = Automatic
 
@@ -89,11 +89,11 @@ table 'public dim_calendario'
 		annotation SummarizationSetBy = Automatic
 
 	column dia_semana
-		sortByColumn: dia_semana_num
 		dataType: string
 		lineageTag: 1476f599-b8e9-41b5-a75d-c98979539f5e
 		summarizeBy: none
 		sourceColumn: dia_semana
+		sortByColumn: dia_semana_num
 
 		annotation SummarizationSetBy = Automatic
 
